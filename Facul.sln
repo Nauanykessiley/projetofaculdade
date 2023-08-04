@@ -1,25 +1,46 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.6.33829.357
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facul", "Facul\Facul.csproj", "{24A4B818-B352-4382-B31C-5DFC4700B980}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{24A4B818-B352-4382-B31C-5DFC4700B980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{24A4B818-B352-4382-B31C-5DFC4700B980}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{24A4B818-B352-4382-B31C-5DFC4700B980}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{24A4B818-B352-4382-B31C-5DFC4700B980}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6218E068-48CA-4194-916E-35C3E68F760C}
-	EndGlobalSection
-EndGlobal
+﻿using System;
+namespace Funcionário
+{
+    class Pessoa
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("\t\t______________________________________________________");
+            Console.WriteLine("\t\t Calcula o reajuste salarial de 10 funcionários!\n");
+            double salario,
+            reajuste,
+            salarion;
+            reajuste = 0; salarion = 0;
+            for (int cont = 1; cont <= 10; cont++)
+            {
+                Console.Write("Informe o salário do funcionário R$: ");
+                salario = Double.Parse(Console.ReadLine());
+
+                Console.WriteLine();
+                if (salario < 10000)
+                {
+                    reajuste = (salario * 0.55);
+                    salarion = salario + reajuste;
+                    Console.WriteLine(String.Format("O reajuste salarial R${0} do funcionário e seu novo salário são: R${1}\n", reajuste, salarion));
+                }
+                else
+                {
+                    if (salario <= 25000)
+                    {
+                        reajuste = (salario * 0.30);
+                        salarion = salario + reajuste;
+                        Console.WriteLine(String.Format("O reajuste salarial R${0} do funcionário e seu novo salário são: R${1}\n", reajuste, salarion));
+                    }
+                    else
+                    {
+                        reajuste = (salario * 0.20); salarion = salario + reajuste;
+                        Console.WriteLine(String.Format("O reajuste salarial R${0} do funcionário e seu novo salário são: R${1}\n", reajuste, salarion));
+                    }
+                }
+            }
+            Console.WriteLine("\t\t______________________________________________________");
+            Console.WriteLine("\n\t\t\t\tProgramação Orientada à Objetos I");
+            Console.WriteLine();
+        }
+    }
+}
